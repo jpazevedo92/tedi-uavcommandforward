@@ -3,7 +3,7 @@ import serial
 
 # configure the serial connections (the parameters differs on the device you are connecting to)
 ser = serial.Serial(
-	port='COM7',
+	port='COM5',
 	baudrate=9600,
 	parity=serial.PARITY_NONE,
 	stopbits=serial.STOPBITS_ONE,
@@ -19,12 +19,7 @@ print ('Enter your commands below.\r\nInsert "exit" to leave the application.')
 input_phrase=1
 while 1 :
 	# get keyboard input
-	#input_phrase = input(">> ")
-	send_name = input("Name: ")
-	send_age = input("Age: ")
-	to_send=struct.pack(send_name, send_age)
-	#send_array = [send_name, send_age]
-	#byte_array = bytearray(send_array)
+	input_phrase = input(">> ")
 	#input = raw_input(">> ")
         # Python 3 users
 	if input_phrase=='exit':
@@ -34,9 +29,8 @@ while 1 :
 		#input_phrase.encode('ascii')
 		# send the character to the device
 		# (note that I happend a \r\n carriage return and line feed to the characters - this is requested by my device)
-		#input_phrase += "\r\n"
-		#ser.write(input_phrase.encode())
-		ser.write(to_send)
+		input_phrase += "\r\n"
+		ser.write(input_phrase.encode())
 		out = ''
 		# let's wait one second before reading output (let's give device time to answer)
 		time.sleep(1)
