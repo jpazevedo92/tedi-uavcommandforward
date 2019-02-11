@@ -19,7 +19,7 @@ print ('Enter your commands below.\r\nInsert "exit" to leave the application.')
 input_phrase=1
 while 1 :
 	# get keyboard input
-	input_phrase = input(">> ")
+	input_phrase = input("Insert a COMMAND - (ex: n_uav-command)")
 	#input = raw_input(">> ")
         # Python 3 users
 	if input_phrase=='exit':
