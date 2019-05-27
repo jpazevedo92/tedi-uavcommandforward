@@ -15,9 +15,11 @@ send_string = ""
 ser = serial.Serial(
 	port='/dev/ttyUSB0',
 	baudrate=115200,
+	bytesize=serial.EIGHTBITS,
 	parity=serial.PARITY_NONE,
-	stopbits=serial.STOPBITS_ONE,
-	bytesize=serial.EIGHTBITS
+	stopbits = serial.STOPBITS_ONE
+
+
 )
 
 ser.close()
@@ -34,17 +36,13 @@ def menu_entry(option):
 			command = input("Introduce a command for drone " + str(x+1) + ": ")
 			uav_no = x+1
 			send_string += str(uav_no) + "_" + command + "_"
-			print("Cycle: %d\n UAV nº: %d\n String to send: %s\n",x, uav_no, send_string)
 			#uav_array = [ uav_no, command ]
 			#send_array.append(uav_array)
 
 		#str_to_send = str(n_uavs)+"|"+str(send_array)+"\r\n"
 		str_to_send = str(n_uavs)+"|"+send_string+"\r\n"
-		print(str_to_send)
-		#print("Sending info")
 		ser.write(str_to_send.encode())
-		#print("message sent")
-		#print("sleep 1s")
+		print(str_to_send)
 		time.sleep(1)
 	elif option == 'a':
 		print("A")
