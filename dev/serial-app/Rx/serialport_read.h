@@ -6,8 +6,6 @@
 #include <termios.h> /* POSIX Terminal Control Definitions */
 #include <unistd.h>  /* UNIX Standard Definitions 	   */ 
 #include <errno.h>   /* ERROR Number Definitions           */
-#include <string.h>
-
 
 int connect_serial_port();
 void receive_serial_message(int fd, char *read_buffer);

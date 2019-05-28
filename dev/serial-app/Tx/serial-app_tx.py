@@ -4,7 +4,7 @@ import serial
 # configure the serial connections (the parameters differs on the device you are connecting to)
 ser = serial.Serial(
 	port='/dev/ttyUSB0',
-	baudrate=115200,
+	baudrate=9600,
 	parity=serial.PARITY_NONE,
 	stopbits=serial.STOPBITS_ONE,
 	bytesize=serial.EIGHTBITS
@@ -35,7 +35,9 @@ while 1 :
 		# let's wait one second before reading output (let's give device time to answer)
 		time.sleep(1)
 		while ser.inWaiting() > 0:
-			print("inWaiting")
+			out += ser.read(1)
+			if out != '':
+				print (">>" + out)
 
 
 

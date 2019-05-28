@@ -58,14 +58,13 @@ int connect_serial_port()
 	if((tcsetattr(fd,TCSANOW,&SerialPortSettings)) != 0) /* Set the attributes to the termios structure*/
 	    printf("\n  ERROR ! in Setting attributes");
 	else
-		printf("\n  BaudRate = 115200 \n  StopBits = 1 \n  Parity   = none");
+		printf("\n  BaudRate = 115200 \n  StopBits = 1 \n  Parity   = none\n");
 	
 	return fd;
 }
 
 void receive_serial_message(int fd, char *received_message){
 	/*------------------------------- Read data from serial port -----------------------------*/
-
 	tcflush(fd, TCIFLUSH);   /* Discards old data in the rx buffer            */
 
 	char read_buffer[100];   /* Buffer to store the data received              */
@@ -77,6 +76,7 @@ void receive_serial_message(int fd, char *received_message){
 	printf("\n\n  ");
 	for(int i=0; i<sizeof(read_buffer); i++)
 		received_message[i] = read_buffer[i];
+	
 	//printf("%s",read_buffer);
 	//received_message = read_buffer;
 	

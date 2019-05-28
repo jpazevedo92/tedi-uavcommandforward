@@ -1,32 +1,20 @@
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "serialport_read.h"
-
+#include "utils.h"
 
 int main(void)
 {
 	char message_received[100]="";
-	char *commands;
+	char message_received_temp[100]="";
 	int fd = connect_serial_port();
 	while(1){
 		receive_serial_message(fd, message_received);
-		//printf("%s",message_received);
-		strtok_r(message_received, "|", &commands);
-		int n_uavs = atoi(message_received);		
-		printf("N_UAVS: %s Commands: %s", message_received, commands);
-	    char *token = strtok(commands, "_");
-		while (token != NULL) 
-		{ 
-			printf("%s\n", token); 
-			token = strtok(NULL, "_"); 
-		} 
+		strcpy(message_received_temp, message_received);
+		int n_uavs = get_n_uavs(message_received_temp);
+		char *cmd_array[n_uavs][COLUMNS];
+		get_commands_array(message_received, cmd_array);
 		
-	}
-	
-	printf("\n +----------------------------------+\n\n\n");
-		
+	}	
+
 	close(fd); /* Close the serial port */
 	return 0;
 }
