@@ -1,4 +1,6 @@
 /.project
+/dev/serial-app/socket/server
+/dev/serial-app/socket/client
 /dev/serial-app/Rx/*.o
 /dev/serial-app/Rx/serial_rx.o
 /dev/serial-app/Rx/serialport_read.o
