@@ -1,3 +1,15 @@
 [submodule "1_Code"]
 	path = 1_Code
 	url = https://github.com/jpazevedo92/tedi-code
+[submodule "2_Report"]
+	path = 2_Report
+	url = https://github.com/jpazevedo92/TEDI_MEEC_REPORT_1111476.git
+[submodule "3_Presentation"]
+	path = 3_Presentation
+	url = https://github.com/jpazevedo92/tedi-presentation.git
+[submodule "5_Documentation"]
+	path = 5_Documentation
+	url = https://github.com/jpazevedo92/tedi-documentation.git
+[submodule "4_Poster"]
+	path = 4_Poster
+	url = https://github.com/jpazevedo92/tedi-poster.git
