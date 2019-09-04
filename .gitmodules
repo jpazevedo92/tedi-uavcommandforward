@@ -1,3 +1,6 @@
 [submodule "report/TEDI_MEEC_REPORT_1111476"]
 	path = report/TEDI_MEEC_REPORT_1111476
 	url = https://github.com/jpazevedo92/TEDI_MEEC_REPORT_1111476.git
+[submodule "dev/firmware/Firmware"]
+	path = dev/firmware/Firmware
+	url = https://github.com/jpazevedo92/Firmware.git
