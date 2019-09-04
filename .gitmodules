@@ -4,3 +4,6 @@
 [submodule "dev/firmware/Firmware"]
 	path = dev/firmware/Firmware
 	url = https://github.com/jpazevedo92/Firmware.git
+[submodule "1_Code"]
+	path = 1_Code
+	url = https://github.com/jpazevedo92/tedi-code
