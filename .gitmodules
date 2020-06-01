@@ -13,3 +13,6 @@
 [submodule "4_Poster"]
 	path = 4_Poster
 	url = https://github.com/jpazevedo92/tedi-poster.git
+[submodule "6_Others/Firmware"]
+	path = 6_Others/Firmware
+	url = git@github.com:jpazevedo92/Firmware.git
